@@ -121,7 +121,7 @@ document.querySelector('#book-form').addEventListener('submit', e => {
     if (title === '' || author === '' || isbn === '') {
         UI.showAlert('Please fill in all fields', 'danger');
     } else {
-        // Instatliate book
+        // Instantiate book
         const book = new Book(title, author, isbn);
 
         // Add Book to UI
@@ -150,7 +150,16 @@ document.querySelector('#book-list').addEventListener('click', e => {
     // Oh, you cannot, if you just adding listener to each row, you will impact performance.
     // You will still have to add it in #book-list. then there is not different if you just
     // check 'delete' class or 'item-x' class
+
+    // Remove book from UI
     UI.deleteBook(e.target);
+
+    // Remove book from store
+    //  <td>${book.isbn}</td>
+    //  <td><a href="#" class="btn btn-danger btn-sm delete">X</a></td>
+    if (e.target.classList.contains('delete')) {
+        Store.removeBook(e.target.parentElement.previousElementSibling.textContent);
+    }
 
     // Show success message
     UI.showAlert('Book Removed', 'success');
