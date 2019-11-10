@@ -88,5 +88,9 @@ document.querySelector('#book-form').addEventListener('submit', e => {
 // Event: Remove a Book
 document.querySelector('#book-list').addEventListener('click', e => {
     // console.log(e.target);
+
+    // I think another one to get this work is to give a id for the X, say 'item-1', 'item-2', etc
+    // and when you check, you will need to find classname if it contains 'item-' and if found,
+    // delete the parentElement's parentElement.
     UI.deleteBook(e.target);
 });
