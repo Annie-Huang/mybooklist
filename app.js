@@ -124,6 +124,10 @@ document.querySelector('#book-form').addEventListener('submit', e => {
         // Instantiate book
         const book = new Book(title, author, isbn);
 
+        // TODO: in my opinion, You should not add the book in the list unless ibns is unique.
+        //  And you should not add book from Store unless
+        //  UI.addBookToList successful and UI.showAlert should not be called.
+
         // Add Book to UI
         UI.addBookToList(book);
 
@@ -153,6 +157,9 @@ document.querySelector('#book-list').addEventListener('click', e => {
 
     // Remove book from UI
     UI.deleteBook(e.target);
+
+    // TODO: in my opinion, You should not remove the book from Store unless
+    //  UI.deleteBooks successful and UI.showAlert should not be called.
 
     // Remove book from store
     //  <td>${book.isbn}</td>
