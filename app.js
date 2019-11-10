@@ -92,5 +92,9 @@ document.querySelector('#book-list').addEventListener('click', e => {
     // I think another one to get this work is to give a id for the X, say 'item-1', 'item-2', etc
     // and when you check, you will need to find classname if it contains 'item-' and if found,
     // delete the parentElement's parentElement.
+    //
+    // Oh, you cannot, if you just adding listener to each row, you will impact performance.
+    // You will still have to add it in #book-list. then there is not different if you just
+    // check 'delete' class or 'item-x' class
     UI.deleteBook(e.target);
 });
