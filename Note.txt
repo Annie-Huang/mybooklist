@@ -2,3 +2,7 @@ https://www.youtube.com/watch?v=JaMCxVWtW58
 https://codepen.io/bradtraversy/pen/OrmKWZ
 
 https://github.com/Annie-Huang/mybooklist
+
+https://bootswatch.com/
+https://bootswatch.com/4/yeti/bootstrap.min.css     << we choose yeti
+https://fontawesome.com/
