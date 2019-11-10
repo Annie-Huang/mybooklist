@@ -10,21 +10,19 @@ class Book {
 // UI Class: Handle UI Tasks
 class UI {
     static displayBooks() {
-        const StoredBooks = [
-            {
-                title: 'Book One',
-                author: 'John Doe',
-                isbn: '3434434'
-            },
-            {
-                title: 'Book Two',
-                author: 'Jane Doe',
-                isbn: '45545'
-            }
-        ];
-
-        const books = StoredBooks;
-
+        // const StoredBooks = [
+        //     {
+        //         title: 'Book One',
+        //         author: 'John Doe',
+        //         isbn: '3434434'
+        //     },
+        //     {
+        //         title: 'Book Two',
+        //         author: 'Jane Doe',
+        //         isbn: '45545'
+        //     }
+        // ];
+        const books = Store.getBooks();
         books.forEach(book => UI.addBookToList(book));
     }
 
@@ -128,6 +126,9 @@ document.querySelector('#book-form').addEventListener('submit', e => {
 
         // Add Book to UI
         UI.addBookToList(book);
+
+        // Add book to store
+        Store.addBook(book);
 
         // Show success message
         UI.showAlert('Book Added', 'success');
