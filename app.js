@@ -40,6 +40,15 @@ class UI {
         list.appendChild(row);
     }
 
+    static deleteBook(el) {
+        if (el.classList.contains('delete')) {
+            // When you click X, the el.parentElement is
+            // <td><a href="#" class="btn btn-danger btn-sm delete">X</a></td>
+            // you will need the el.parentElement.parentElement, which gives you a whole row in the table
+            el.parentElement.parentElement.remove();
+        }
+    }
+
     static clearFields() {
         document.querySelector('#title').value = '';
         document.querySelector('#author').value = '';
@@ -55,6 +64,8 @@ document.addEventListener('DOMContentLoaded', UI.displayBooks);
 
 // Event: Add a Book
 document.querySelector('#book-form').addEventListener('submit', e => {
+    // console.log(e.target);
+
     // Prevent actual submit
     e.preventDefault();
 
@@ -75,3 +86,7 @@ document.querySelector('#book-form').addEventListener('submit', e => {
 
 
 // Event: Remove a Book
+document.querySelector('#book-list').addEventListener('click', e => {
+    // console.log(e.target);
+    UI.deleteBook(e.target);
+});
