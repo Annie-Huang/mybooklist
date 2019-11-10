@@ -120,4 +120,7 @@ document.querySelector('#book-list').addEventListener('click', e => {
     // You will still have to add it in #book-list. then there is not different if you just
     // check 'delete' class or 'item-x' class
     UI.deleteBook(e.target);
+
+    // Show success message
+    UI.showAlert('Book Removed', 'success');
 });
